@@ -2,7 +2,7 @@ import { Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#09090b] text-[#fafafa] font-sans selection:bg-[#10b981] selection:text-white p-4 md:p-6 lg:p-8 flex flex-col items-center">
+    <div className="min-h-screen bg-[#09090b] text-[#fafafa] font-sans selection:bg-accent selection:text-white p-4 md:p-6 lg:p-8 flex flex-col items-center">
       <div className="w-full max-w-6xl flex flex-col gap-4">
         
         {/* Top Row */}
@@ -12,7 +12,7 @@ export default function App() {
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
               <div>
                 <h1 className="text-4xl md:text-[42px] font-extrabold tracking-tight leading-none uppercase m-0">
-                  Cody <span className="text-[#10b981]">Choules</span>
+                  Cody <span className="text-accent">Choules</span>
                 </h1>
                 <p className="text-[14px] md:text-[16px] text-[#a1a1aa] mt-3 font-medium">
                   CS Major &amp; ML Specialist &bull; VDC Expert &bull; Security Enthusiast
@@ -66,7 +66,7 @@ export default function App() {
               <span className="text-[10px] uppercase tracking-[0.1em] text-[#71717a] font-bold block">Technical Stack</span>
               
               <div>
-                <div className="text-[12px] font-semibold text-[#10b981] mb-2">Programming &amp; Data</div>
+                <div className="text-[12px] font-semibold text-accent mb-2">Programming &amp; Data</div>
                 <div className="flex flex-wrap gap-1.5">
                   <span className="bg-[#27272a] px-2.5 py-1 rounded text-[11px] text-[#fafafa]">Python</span>
                   <span className="bg-[#27272a] px-2.5 py-1 rounded text-[11px] text-[#fafafa]">SQL</span>
@@ -77,7 +77,7 @@ export default function App() {
               </div>
 
               <div>
-                <div className="text-[12px] font-semibold text-[#10b981] mb-2">ML Orientation</div>
+                <div className="text-[12px] font-semibold text-accent mb-2">ML Orientation</div>
                 <div className="flex flex-wrap gap-1.5">
                   <span className="bg-[#27272a] px-2.5 py-1 rounded text-[11px] text-[#fafafa]">API Integration</span>
                   <span className="bg-[#27272a] px-2.5 py-1 rounded text-[11px] text-[#fafafa]">Symbolic Logic</span>
@@ -87,7 +87,7 @@ export default function App() {
               </div>
 
               <div>
-                <div className="text-[12px] font-semibold text-[#10b981] mb-2">Operations &amp; Delivery</div>
+                <div className="text-[12px] font-semibold text-accent mb-2">Operations &amp; Delivery</div>
                 <div className="flex flex-wrap gap-1.5">
                   <span className="bg-[#27272a] px-2.5 py-1 rounded text-[11px] text-[#fafafa]">Workflow Optimization</span>
                   <span className="bg-[#27272a] px-2.5 py-1 rounded text-[11px] text-[#fafafa]">ITIL</span>
@@ -104,12 +104,12 @@ export default function App() {
                 <div>
                   <div className="text-[14px] font-semibold text-[#efeff1]">Western Governors University</div>
                   <div className="text-[11.5px] leading-[1.4] text-[#a1a1aa] mt-1">B.S. Computer Science (ML Spec)</div>
-                  <div className="text-[12px] text-[#10b981] mt-1">2022 &mdash; 2026</div>
+                  <div className="text-[12px] text-accent mt-1">2022 &mdash; 2026</div>
                 </div>
                 <div>
                   <div className="text-[14px] font-semibold text-[#efeff1]">Mesa Community College</div>
                   <div className="text-[11.5px] leading-[1.4] text-[#a1a1aa] mt-1">Associate in Science</div>
-                  <div className="text-[12px] text-[#10b981] mt-1">2011 &mdash; 2012</div>
+                  <div className="text-[12px] text-accent mt-1">2011 &mdash; 2012</div>
                 </div>
               </div>
             </section>
@@ -119,11 +119,11 @@ export default function App() {
               <span className="text-[10px] uppercase tracking-[0.1em] text-[#71717a] font-bold mb-4 block">Certifications</span>
               <div className="space-y-3">
                 <div className="flex items-center text-[12px] text-[#d4d4d8]">
-                  <span className="w-1.5 h-1.5 bg-[#10b981] rounded-full mr-2.5 flex-shrink-0"></span>
+                  <span className="w-1.5 h-1.5 bg-accent rounded-full mr-2.5 flex-shrink-0"></span>
                   ITIL Foundation (IT Management)
                 </div>
                 <div className="flex items-center text-[12px] text-[#d4d4d8]">
-                  <span className="w-1.5 h-1.5 bg-[#10b981] rounded-full mr-2.5 flex-shrink-0"></span>
+                  <span className="w-1.5 h-1.5 bg-accent rounded-full mr-2.5 flex-shrink-0"></span>
                   LPI Linux Essentials
                 </div>
                 <div className="flex items-center text-[12px] text-[#d4d4d8] opacity-70">
@@ -141,7 +141,7 @@ export default function App() {
             <section className="bg-[#18181b] border border-[#27272a] rounded-2xl p-6">
               <span className="text-[10px] uppercase tracking-[0.1em] text-[#71717a] font-bold mb-6 block">Featured Projects</span>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <article className="bg-[#111113] border border-[#27272a] rounded-xl p-4 flex flex-col gap-2">
+                <article className="ambient-tile bg-[#111113] border border-[#27272a] rounded-xl p-4 flex flex-col gap-2">
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="text-[14px] font-semibold text-[#efeff1]">Genetic Algorithm</h3>
                     <span className="text-[10px] uppercase tracking-wide text-[#a1a1aa] bg-[#27272a] px-2 py-1 rounded">Coming Soon</span>
@@ -151,7 +151,7 @@ export default function App() {
                   </p>
                 </article>
 
-                <article className="bg-[#111113] border border-[#27272a] rounded-xl p-4 flex flex-col gap-2">
+                <article className="ambient-tile bg-[#111113] border border-[#27272a] rounded-xl p-4 flex flex-col gap-2">
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="text-[14px] font-semibold text-[#efeff1]">Lamarckian Algorithm</h3>
                     <span className="text-[10px] uppercase tracking-wide text-[#a1a1aa] bg-[#27272a] px-2 py-1 rounded">Coming Soon</span>
@@ -161,7 +161,7 @@ export default function App() {
                   </p>
                 </article>
 
-                <article className="bg-[#111113] border border-[#27272a] rounded-xl p-4 flex flex-col gap-2">
+                <article className="ambient-tile bg-[#111113] border border-[#27272a] rounded-xl p-4 flex flex-col gap-2">
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="text-[14px] font-semibold text-[#efeff1]">LGA Meta Algorithm</h3>
                     <span className="text-[10px] uppercase tracking-wide text-[#a1a1aa] bg-[#27272a] px-2 py-1 rounded">Coming Soon</span>
@@ -171,7 +171,7 @@ export default function App() {
                   </p>
                 </article>
 
-                <article className="bg-[#111113] border border-[#27272a] rounded-xl p-4 flex flex-col gap-2">
+                <article className="ambient-tile bg-[#111113] border border-[#27272a] rounded-xl p-4 flex flex-col gap-2">
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="text-[14px] font-semibold text-[#efeff1]">GA Meta Algorithm</h3>
                     <span className="text-[10px] uppercase tracking-wide text-[#a1a1aa] bg-[#27272a] px-2 py-1 rounded">Coming Soon</span>
@@ -181,7 +181,7 @@ export default function App() {
                   </p>
                 </article>
 
-                <article className="bg-[#111113] border border-[#27272a] rounded-xl p-4 flex flex-col gap-2">
+                <article className="ambient-tile bg-[#111113] border border-[#27272a] rounded-xl p-4 flex flex-col gap-2">
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="text-[14px] font-semibold text-[#efeff1]">Internal world modeling</h3>
                     <span className="text-[10px] uppercase tracking-wide text-[#a1a1aa] bg-[#27272a] px-2 py-1 rounded">Coming Soon</span>
@@ -191,7 +191,7 @@ export default function App() {
                   </p>
                 </article>
 
-                <article className="bg-[#111113] border border-[#27272a] rounded-xl p-4 flex flex-col gap-2">
+                <article className="ambient-tile bg-[#111113] border border-[#27272a] rounded-xl p-4 flex flex-col gap-2">
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="text-[14px] font-semibold text-[#efeff1]">Database</h3>
                     <span className="text-[10px] uppercase tracking-wide text-[#a1a1aa] bg-[#27272a] px-2 py-1 rounded">Coming Soon</span>
@@ -201,7 +201,7 @@ export default function App() {
                   </p>
                 </article>
 
-                <article className="bg-[#111113] border border-[#27272a] rounded-xl p-4 flex flex-col gap-2">
+                <article className="ambient-tile bg-[#111113] border border-[#27272a] rounded-xl p-4 flex flex-col gap-2">
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="text-[14px] font-semibold text-[#efeff1]">Eink cyber deck (self built laptop)</h3>
                     <span className="text-[10px] uppercase tracking-wide text-[#a1a1aa] bg-[#27272a] px-2 py-1 rounded">Coming Soon</span>
@@ -222,7 +222,7 @@ export default function App() {
                 <div>
                   <div className="text-[15px] font-semibold text-[#efeff1] mb-1">VDC Coordinator &amp; Digital Transformation Lead</div>
                   <div className="flex flex-wrap gap-x-1.5 mb-3 text-[12px] items-center">
-                    <span className="text-[#10b981]">Landmark Building Consultants</span>
+                    <span className="text-accent">Landmark Building Consultants</span>
                     <span className="text-[#52525b]">|</span>
                     <span className="text-[#a1a1aa]">Mesa, AZ</span>
                     <span className="text-[#52525b]">|</span>
@@ -262,7 +262,7 @@ export default function App() {
                 <div>
                   <div className="text-[15px] font-semibold text-[#efeff1] mb-1">Superintendent, Assistant Superintendent, &amp; General Tech</div>
                   <div className="flex flex-wrap gap-x-1.5 mb-3 text-[12px] items-center">
-                    <span className="text-[#10b981]">Landmark Building Consultants</span>
+                    <span className="text-accent">Landmark Building Consultants</span>
                     <span className="text-[#52525b]">|</span>
                     <span className="text-[#a1a1aa]">Mesa, AZ</span>
                     <span className="text-[#52525b]">|</span>
@@ -290,7 +290,7 @@ export default function App() {
                 <div>
                   <div className="text-[15px] font-semibold text-[#efeff1] mb-1">Electric Bike Rental Manager &amp; IT</div>
                   <div className="flex flex-wrap gap-x-1.5 mb-3 text-[12px] items-center">
-                    <span className="text-[#10b981]">Go Play Durango</span>
+                    <span className="text-accent">Go Play Durango</span>
                     <span className="text-[#52525b]">|</span>
                     <span className="text-[#a1a1aa]">Durango, CO</span>
                     <span className="text-[#52525b]">|</span>

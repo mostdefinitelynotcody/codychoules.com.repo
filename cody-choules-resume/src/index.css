@@ -3,4 +3,27 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-accent: #10b981;
+}
+
+/* Soft accent glow on highlighted text (tracks accent color) */
+::selection {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  text-shadow:
+    0 0 14px color-mix(in srgb, var(--color-accent) 65%, transparent),
+    0 0 28px color-mix(in srgb, var(--color-accent) 35%, transparent);
+}
+
+@layer components {
+  /* Ambient accent glow when hovering project tiles */
+  .ambient-tile {
+    transition:
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+  }
+  .ambient-tile:hover {
+    box-shadow: 0 0 36px -10px color-mix(in srgb, var(--color-accent) 42%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 28%, #27272a);
+  }
 }
