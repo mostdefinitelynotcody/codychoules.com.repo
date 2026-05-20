@@ -17,6 +17,14 @@ Interactive resume site for [codychoules.com](https://codychoules.com).
 
 `npm run build` outputs static assets to `dist/`.
 
+## Deploy on Vercel
+
+`vercel.json` lives in this directory (not the repo root). In the Vercel project **Settings → General → Root Directory**, set:
+
+`cody-choules-resume`
+
+Do not put `rootDirectory` in `vercel.json` — Vercel rejects it ([project configuration](https://vercel.com/docs/project-configuration/vercel-json)).
+
 ## Site version
 
 The page footer shows **v0.1** (and later **0.10**, **0.11**, …) plus the date/time of the last version bump. Version data lives in `site-version.json` and updates when you push.
