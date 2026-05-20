@@ -16,8 +16,9 @@ OLD_TITLES = (
     "Computer Aided Draftsman",
     "VDC Coordinator & Digital Transformation Lead",
     "VDC Coordinator & Technical Lead",
+    "VDC Coordinator & Technical Specialist",
 )
-NEW_TITLE = "VDC Coordinator & Technical Lead"
+NEW_TITLE = "VDC Coordinator & Technical Specialist"
 FONT_SIZE = 10.0
 
 

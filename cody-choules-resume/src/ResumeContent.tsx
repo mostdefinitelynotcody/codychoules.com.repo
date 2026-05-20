@@ -212,7 +212,7 @@ export default function ResumeContent({
 
                   <div className="mb-6">
                     <div className="text-[15px] font-semibold text-[#efeff1] mb-1">
-                      VDC Coordinator &amp; Technical Lead
+                      VDC Coordinator &amp; Technical Specialist
                     </div>
                     <div className="flex flex-wrap gap-x-1.5 mb-3 text-[12px] items-center">
                       <span className="text-[#a1a1aa]">Mesa, AZ 85215</span>
