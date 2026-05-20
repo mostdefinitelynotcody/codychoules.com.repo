@@ -18,7 +18,7 @@ const REPO_ROOT = path.resolve(ROOT, '..');
 function run(command, args, options = {}) {
   const result = spawnSync(command, args, {
     stdio: 'inherit',
-    shell: process.platform === 'win32',
+    shell: false,
     ...options,
   });
   if (result.status !== 0) {
@@ -33,7 +33,7 @@ run('git', ['add', 'site-version.json'], {cwd: ROOT});
 const versionPath = 'cody-choules-resume/site-version.json';
 const diff = spawnSync('git', ['diff', '--cached', '--quiet', '--', versionPath], {
   cwd: REPO_ROOT,
-  shell: process.platform === 'win32',
+  shell: false,
 });
 
 if (diff.status === 1) {
