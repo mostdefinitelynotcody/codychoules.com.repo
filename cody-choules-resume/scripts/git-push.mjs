@@ -30,7 +30,8 @@ run('node', [path.join(ROOT, 'scripts', 'bump-site-version.mjs')], {cwd: ROOT});
 
 run('git', ['add', 'site-version.json'], {cwd: ROOT});
 
-const diff = spawnSync('git', ['diff', '--cached', '--quiet', '--', 'site-version.json'], {
+const versionPath = 'cody-choules-resume/site-version.json';
+const diff = spawnSync('git', ['diff', '--cached', '--quiet', '--', versionPath], {
   cwd: REPO_ROOT,
   shell: process.platform === 'win32',
 });
