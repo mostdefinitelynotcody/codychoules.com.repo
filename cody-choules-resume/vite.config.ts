@@ -3,9 +3,11 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
+const githubPages = process.env.GITHUB_PAGES === 'true';
+
 export default defineConfig({
-  // Relative base so favicon and assets work on GitHub Pages project URLs and custom domains.
-  base: './',
+  // "/" for Vercel/custom domain (/dev routes). Subpath for GitHub Pages project sites.
+  base: githubPages ? '/codychoules.com.repo/' : '/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
@@ -13,7 +15,6 @@ export default defineConfig({
     },
   },
   server: {
-    // Set DISABLE_HMR=true to disable hot module replacement when needed (e.g. remote file sync).
     hmr: process.env.DISABLE_HMR !== 'true',
   },
 });
