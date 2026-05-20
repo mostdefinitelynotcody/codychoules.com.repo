@@ -40,4 +40,5 @@ if (diff.status === 1) {
 }
 
 const pushArgs = process.argv.slice(2);
-run('git', ['push', ...pushArgs], {cwd: REPO_ROOT});
+// --no-verify: pre-push also bumps; skipping avoids double increment
+run('git', ['push', '--no-verify', ...pushArgs], {cwd: REPO_ROOT});
