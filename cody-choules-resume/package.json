@@ -8,7 +8,10 @@
     "build": "vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "bump-version": "node scripts/bump-site-version.mjs",
+    "install-hooks": "node scripts/install-git-hooks.mjs",
+    "push": "node scripts/git-push.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",

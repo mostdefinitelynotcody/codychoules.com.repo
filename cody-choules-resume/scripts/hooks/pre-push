@@ -1,0 +1,21 @@
+#!/bin/sh
+# Bump site version before push. If a new commit is created, abort so the user
+# can push again (or use `npm run push` for a single-step flow).
+set -e
+
+ROOT="$(git rev-parse --show-toplevel)"
+RESUME="$ROOT/cody-choules-resume"
+
+cd "$RESUME"
+node scripts/bump-site-version.mjs
+git add site-version.json
+
+cd "$ROOT"
+if git diff --cached --quiet -- cody-choules-resume/site-version.json; then
+  exit 0
+fi
+
+git commit -m "chore: bump site version"
+echo ""
+echo "Site version bumped. Run git push again, or use: npm run push (from cody-choules-resume)"
+exit 1

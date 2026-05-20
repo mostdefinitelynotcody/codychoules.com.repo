@@ -1,6 +1,7 @@
 import {Mail, MapPin, Phone, ExternalLink} from 'lucide-react';
 import DevBanner from './components/DevBanner';
 import FeaturedProjects from './components/FeaturedProjects';
+import SiteVersionFooter from './components/SiteVersionFooter';
 
 type ResumeContentProps = {
   showFeaturedProjects?: boolean;
@@ -285,6 +286,8 @@ export default function ResumeContent({
             </section>
           </div>
         </div>
+
+        <SiteVersionFooter />
       </div>
     </div>
   );
