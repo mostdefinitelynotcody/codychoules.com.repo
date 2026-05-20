@@ -38,7 +38,7 @@ This script:
 2. Commits `site-version.json` if it changed
 3. Runs `git push` with any arguments you pass after `--`
 
-Use this when you want the bump commit included in **one** push.
+Use this when you want the bump commit included in **one** push. The script passes `--no-verify` to `git push` so the optional pre-push hook does not bump a second time.
 
 ### Git pre-push hook (optional)
 
