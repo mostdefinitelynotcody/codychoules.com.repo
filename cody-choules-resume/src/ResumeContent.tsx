@@ -28,15 +28,17 @@ export default function ResumeContent({
                   CS Major &amp; ML Specialist &bull; VDC Expert &bull; Security Enthusiast
                 </p>
               </div>
-              <a
-                href="https://codychoules.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-shrink-0 items-center justify-center gap-2 text-[11px] font-bold uppercase tracking-widest px-4 py-2.5 rounded-lg bg-[#27272a] hover:bg-[#3f3f46] text-[#fafafa] transition-all border border-[#3f3f46]"
-              >
-                My Projects
-                <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-              </a>
+              {showDevBanner && (
+                <a
+                  href="https://codychoules.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-shrink-0 items-center justify-center gap-2 text-[11px] font-bold uppercase tracking-widest px-4 py-2.5 rounded-lg bg-[#27272a] hover:bg-[#3f3f46] text-[#fafafa] transition-all border border-[#3f3f46]"
+                >
+                  My Projects
+                  <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                </a>
+              )}
             </div>
           </div>
 
@@ -287,7 +289,7 @@ export default function ResumeContent({
           </div>
         </div>
 
-        <SiteVersionFooter />
+        <SiteVersionFooter isDev={showDevBanner} />
       </div>
     </div>
   );

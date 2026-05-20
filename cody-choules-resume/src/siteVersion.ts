@@ -5,9 +5,18 @@ export type SiteVersionData = {
   pushedAt: string;
 };
 
-/** Display form: revision 1 → "0.1", 10 → "0.10", 11 → "0.11". */
-export function formatSiteVersion(revision: number): string {
-  return `0.${revision}`;
+export type SiteVersionChannel = 'production' | 'dev';
+
+/**
+ * Display form: revision 11 → production "0.11", dev "1.11".
+ * Dev is always one major step ahead of production (0.x → 1.x), same revision suffix.
+ */
+export function formatSiteVersion(
+  revision: number,
+  channel: SiteVersionChannel = 'production',
+): string {
+  const major = channel === 'dev' ? 1 : 0;
+  return `${major}.${revision}`;
 }
 
 /** Human-readable local date/time for the push timestamp. */

@@ -1,10 +1,8 @@
 /**
  * Bump the public site version and record the push timestamp.
  *
- * Version format: 0.{revision}
- *   - revision 1  → 0.1   (first push after initial)
- *   - revision 10 → 0.10  (tenth push)
- *   - revision 11 → 0.11  (eleventh push)
+ * Version format: 0.{revision} on /, 1.{revision} on /dev (same revision integer).
+ *   - revision 11 → production 0.11, dev 1.11
  *
  * Each run increments revision by 1 and sets pushedAt to the current UTC time.
  * The result is written to site-version.json at the project root.
@@ -22,9 +20,10 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const VERSION_FILE = path.join(ROOT, 'site-version.json');
 const DRY_RUN = process.argv.includes('--dry-run');
 
-/** @param {number} revision */
-function formatSiteVersion(revision) {
-  return `0.${revision}`;
+/** @param {number} revision @param {'production' | 'dev'} [channel] */
+function formatSiteVersion(revision, channel = 'production') {
+  const major = channel === 'dev' ? 1 : 0;
+  return `${major}.${revision}`;
 }
 
 function loadVersion() {
@@ -50,16 +49,18 @@ function bump() {
 
 function main() {
   const {current, next} = bump();
-  const from = formatSiteVersion(current.revision);
-  const to = formatSiteVersion(next.revision);
+  const fromProd = formatSiteVersion(current.revision);
+  const toProd = formatSiteVersion(next.revision);
+  const fromDev = formatSiteVersion(current.revision, 'dev');
+  const toDev = formatSiteVersion(next.revision, 'dev');
 
   if (DRY_RUN) {
-    console.log(`Would bump ${from} → ${to} at ${next.pushedAt}`);
+    console.log(`Would bump ${fromProd} → ${toProd} (dev ${fromDev} → ${toDev}) at ${next.pushedAt}`);
     return;
   }
 
   writeFileSync(VERSION_FILE, `${JSON.stringify(next, null, 2)}\n`, 'utf8');
-  console.log(`Site version bumped: ${from} → ${to} (${next.pushedAt})`);
+  console.log(`Site version bumped: ${fromProd} → ${toProd} (dev ${fromDev} → ${toDev}) (${next.pushedAt})`);
 }
 
 main();

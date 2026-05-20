@@ -27,7 +27,7 @@ Do not put `rootDirectory` in `vercel.json` — Vercel rejects it ([project conf
 
 ## Site version
 
-The page footer shows **v0.1** (and later **0.10**, **0.11**, …) plus the date/time of the last version bump. Version data lives in `site-version.json` and updates when you push.
+The page footer shows **v0.1** on `/` (and later **0.10**, **0.11**, …). **`/dev`** shows the same revision with a leading **1** instead of **0** (e.g. **v1.11** when production is **v0.11**). Version data lives in `site-version.json` and updates when you push.
 
 **Recommended:** from this directory, use `npm run push -- origin main` so the version bumps, commits, and pushes in one step.
 

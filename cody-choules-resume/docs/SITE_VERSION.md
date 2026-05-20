@@ -2,23 +2,31 @@
 
 The resume site shows a version and push timestamp at the bottom of the page, for example:
 
-**v0.1 · pushed May 20, 2026, 12:00 AM**
+**v0.1 · pushed May 20, 2026, 12:00 AM** on `/`  
+**v1.1 · pushed May 20, 2026, 12:00 AM** on `/dev`
 
 ## How versioning works
 
 | Field | File | Meaning |
 |-------|------|---------|
-| `revision` | `site-version.json` | Integer bumped on every git push; displayed as `0.{revision}` |
+| `revision` | `site-version.json` | Integer bumped on every git push; suffix for both channels |
 | `pushedAt` | `site-version.json` | ISO-8601 UTC time when the version was last bumped |
 
 Display rules (decimal-style increments, not semver):
 
-| Push # | `revision` | Shown version |
-|--------|------------|---------------|
-| Initial (committed baseline) | `1` | `0.1` |
-| 2nd | `2` | `0.2` |
-| 10th | `10` | `0.10` |
-| 11th | `11` | `0.11` |
+| Page | Format | Example (`revision` 11) |
+|------|--------|-------------------------|
+| Production (`/`) | `0.{revision}` | `0.11` |
+| Dev (`/dev`) | `1.{revision}` | `1.11` (one major step ahead of production) |
+
+Dev does not use a separate bump: it reads the same `revision` and shows `1.{revision}` instead of `0.{revision}`.
+
+| Push # | `revision` | Production | Dev |
+|--------|------------|------------|-----|
+| Initial (committed baseline) | `1` | `0.1` | `1.1` |
+| 2nd | `2` | `0.2` | `1.2` |
+| 10th | `10` | `0.10` | `1.10` |
+| 11th | `11` | `0.11` | `1.11` |
 
 The UI reads `site-version.json` at build time. Deployed GitHub Pages builds use whatever is committed on `main` when CI runs.
 
