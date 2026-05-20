@@ -30,6 +30,9 @@ export default function ResumeContent({
                 <h1 className="text-4xl md:text-[42px] font-extrabold tracking-tight leading-none uppercase m-0">
                   Cody <span className="text-accent">Choules</span>
                 </h1>
+                <p className="text-[14px] md:text-[16px] text-[#a1a1aa] mt-3 font-medium">
+                  CS Major &amp; ML Specialist &bull; VDC Expert &bull; Security Enthusiast
+                </p>
               </div>
               <div className="flex flex-col sm:flex-row flex-wrap gap-2 flex-shrink-0">
                 <a
